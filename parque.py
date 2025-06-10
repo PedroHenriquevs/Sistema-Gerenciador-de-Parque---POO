@@ -32,7 +32,25 @@ class Pessoa(ABC):
         self._nome = nome
         self._cpf = cpf
         self._telefone = telefone
+
+class Funcionario(Pessoa):
+    def __init__(self, id,  nome, cpf, telefone):
+        super().__init__(nome, cpf, telefone)
+        self._id = id
+
+class OperadorBrinquedo(Funcionario):
+    def __init__(self, id, nome, cpf, telefone, brinq_res):
+        super().__init__(id, nome, cpf, telefone)
+        self._brinq_res = brinq_res
+        
+class Zelador(Funcionario):
+    def __init__(self, id, nome, cpf, telefone, setor):
+        super().__init__(id, nome, cpf, telefone)
+        self._setor = setor
+        
     
+
+        
     
     
 
@@ -86,6 +104,9 @@ class Brinquedo(ABC):
 
     def adicionar_pessoa(self):
         pass
+    
+    def esvaziar_brinquedo(self):
+        pass
 
     def mostrar_brinquedo(self):
         pass
@@ -95,8 +116,9 @@ class Montanha_Russa(Brinquedo):
     def __init__(self, id_brinquedo, capacidade, qtd_pessoa, altura_min):
         super().__init__(id_brinquedo, capacidade, qtd_pessoa, altura_min)
         self._qtd_ingresso = 0
-        self._total_venda = 0.0        
+        self._total_venda = 0.0       
 
+    def adicionar_pessoa(self):
+        
 
     
-        
