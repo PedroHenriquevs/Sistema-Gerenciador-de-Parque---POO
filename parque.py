@@ -8,6 +8,7 @@ class Parque:
         self._data = datetime.now()
         self.brinquedos = []
         self._funcionarios = {}
+        self._registro_brinquedos = {} #Adicionar o get para esse atributo
 
     @property
     def total_ingresso(self):
@@ -105,7 +106,7 @@ class Brinquedo(ABC):
     def registrador(self):
         return self._registrador
     
-    
+
     def adicionar_pessoa(self):
         pass
     
@@ -133,7 +134,7 @@ class Brinquedo(ABC):
     def verifica_tempo(self):
         pass
 
-
+#Provável alteração na criação das classes derivadas, para atributo em brinquedo
 class Montanha_Russa(Brinquedo):
     def __init__(self, id_brinquedo, capacidade, qtd_pessoa, altura_min):
         super().__init__(id_brinquedo, capacidade, qtd_pessoa, altura_min)
