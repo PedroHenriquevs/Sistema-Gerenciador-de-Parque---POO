@@ -62,7 +62,7 @@ class Brinquedo(ABC):
         self._qtd_pessoa = qtd_pessoa
         self._altura_min = altura_min
         self._registrador = {}
-        self.disponivel = True
+        self.estado = "ativo"
 
     @property
     def id_brinquedo(self):
@@ -101,7 +101,11 @@ class Brinquedo(ABC):
         else:
             print("Error: Altura inválida!")
     
-
+    @property
+    def registrador(self):
+        return self._registrador
+    
+    
     def adicionar_pessoa(self):
         pass
     
@@ -109,6 +113,24 @@ class Brinquedo(ABC):
         pass
 
     def mostrar_brinquedo(self):
+        pass
+
+    def em_manutencao(self):
+        pass
+
+    def iniciar_brinquedo(self):
+        pass
+
+    def parar_brinquedo(self):
+        pass
+
+    def reativar_brinquedo(self):
+        pass
+
+    def status(self):
+        pass
+
+    def verifica_tempo(self):
         pass
 
 
