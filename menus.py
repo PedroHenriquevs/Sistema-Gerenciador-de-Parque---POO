@@ -1,5 +1,5 @@
 
-# ===================== MENUS =====================
+from barraca import *
 def menu_gerente(gerente):
     while True:
         print("\n=== Menu Gerente ===")
@@ -33,6 +33,7 @@ def menu_gerente(gerente):
             else:
                 for f in gerente.parque.funcionarios_parque.values():
                     print(f"ID: {f._id_func} | Nome: {f._nome}")
+
         elif opcao == '6':
             gerente.adicionar_barraca()
         elif opcao == '7':
@@ -95,6 +96,7 @@ def menu_bilheteiro(funcionario_bilheteiro):
         print("\n=== Menu Bilheteiro ===")
         print("1 - Vender ingresso")
         print("2 - Ver caixa")
+        print("3- Mostrar Funcionarios")
         print("0 - Sair")
         opcao = input("Escolha: ")
 
@@ -102,6 +104,8 @@ def menu_bilheteiro(funcionario_bilheteiro):
             funcionario_bilheteiro.vender_ingresso()
         elif opcao == '2':
             funcionario_bilheteiro.bilheteria.ver_caixa()
+        elif opcao == '3':
+            funcionario_bilheteiro.bilheteria.mostrar_funcionarios()
         elif opcao == '0':
             break
         else:
@@ -114,7 +118,7 @@ def menu_barraca(funcionario_barraca):
             print("Parque fechado. Operações na barraca não são permitidas.")
             break
 
-        barraca = funcionario_barraca.parque.barracas.get(funcionario_barraca.id_barraca)
+        barraca = funcionario_barraca.parque.barracas[funcionario_barraca.id_barraca]
         if funcionario_barraca._id_func not in barraca.lista_funcionarios:
             print("Funcionário não autorizado para esta barraca.")
             break

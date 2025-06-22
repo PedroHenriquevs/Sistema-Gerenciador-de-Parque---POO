@@ -47,7 +47,7 @@ def main():
                 continue
             funcionarios_barraca = [f for f in parque.funcionarios_parque.values() if isinstance(f, FuncionarioBarraca) and f.id_barraca == id_barraca]
             if funcionarios_barraca:
-                funcionario_barraca = funcionarios_barraca[0]  # Pega primeiro funcionário para teste
+                funcionario_barraca = funcionarios_barraca[0]  
                 menu_barraca(funcionario_barraca)
             else:
                 print("Nenhum funcionário cadastrado para esta barraca.")
